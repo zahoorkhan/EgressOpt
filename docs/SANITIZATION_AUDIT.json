@@ -1,0 +1,39 @@
+{
+  "sources": [
+    "Research.zip",
+    "EgressOpt_Phase2_M6M_SF10_Pilot_20261017.zip",
+    "EgressOpt_M6L_Direct_SF10_VM_Transfer_20261017.zip",
+    "EgressOpt_M6N_SF1_SF10_Repeated_Complete_20261018.zip",
+    "EggOPT_7.zip"
+  ],
+  "default_cloud_values_replaced_count": 49,
+  "default_cloud_env_keys": [
+    "EGRESSOPT_AWS_INSTANCE",
+    "EGRESSOPT_AWS_INSTANCE_ID",
+    "EGRESSOPT_AWS_PROFILE",
+    "EGRESSOPT_AWS_REGION",
+    "EGRESSOPT_AZURE_NSG",
+    "EGRESSOPT_AZURE_PUBLIC_IP_RESOURCE",
+    "EGRESSOPT_AZURE_RESOURCE_GROUP",
+    "EGRESSOPT_AZURE_VM",
+    "EGRESSOPT_GCP_PROJECT",
+    "EGRESSOPT_GCP_VM",
+    "EGRESSOPT_GCP_ZONE"
+  ],
+  "original_phase1_hashes": {
+    "q03": "9a2938ea9772b0a5a009f8854400c361abfe81b49eee60dc334ebbe2f1b7dbd5",
+    "q05": "bc7ac734062e88e13e4a23b3b6368c7a5623c6a806adfef63c9d913462526d21"
+  },
+  "public_phase1_hashes": {
+    "q03": "663952e8881a8e7291c8c866f7f23d10f12180cb8f4de093c41b2bb3e793ef8c",
+    "q05": "a37a423410cbefbd2d0925741eafc6991a3e26e87e77e734c33d60060b675ed2"
+  },
+  "status": "PUBLICATION_DRAFT_NO_CLOUD_REEXECUTION",
+  "files_count": 84,
+  "security_scan": "PASS (65 scanned text files; rules are not exhaustive)",
+  "offline_report": "PASS (four reports, 20 measured pairs; generated plots excluded by .gitignore)",
+  "q03_q05_phase2_source_integrity": "PASS (sanitized public SHA256; historical measured hashes documented separately)",
+  "sf10_mock_vm_lifecycle": "PASS (mocked; no cloud operations)",
+  "warning": "Latest uploaded EggOPT_7.zip is manuscript-only; publication code is assembled from earlier provided source archives, not a verified snapshot of latest Mac code",
+  "cloud_end_to_end_revalidated": false
+}

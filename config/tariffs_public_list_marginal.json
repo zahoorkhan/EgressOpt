@@ -1,0 +1,24 @@
+{
+  "scenario_id": "PUBLIC_LIST_MARGINAL_2026_10_16_ACCOUNT_ABOVE_ALLOWANCES_NOT_INVOICED",
+  "classification": "PUBLISHED_LIST_RATE_MARGINAL_SCENARIO_NOT_BILLED",
+  "description": "INDICATIVE published standard public-internet outbound first paid tier; region/application-specific SKU and account allowances MUST be independently confirmed before billing claims.",
+  "unit_bytes": 1000000000,
+  "tier_assumption": "fixed_marginal_rates_no_free_tier",
+  "hypothetical_account_state": "The relevant 2026-10-16 account has already exhausted eligible outbound allowances and is in the specified first paid tier. This state has NOT been verified for the user's accounts.",
+  "traffic_boundary": "Only application HTTPS request-body bytes recorded by cloud runners, not actual billed bytes.",
+  "site_regions": {"aws":"us-east-1", "azure":"eastus", "gcp":"us-east4"},
+  "directed_rates": [
+    {"source":"aws","destination":"azure","usd_per_unit":"0.09","unit_bytes":1000000000,"assumed_tariff":"EC2 standard public internet outbound, first paid tier"},
+    {"source":"aws","destination":"gcp","usd_per_unit":"0.09","unit_bytes":1000000000,"assumed_tariff":"EC2 standard public internet outbound, first paid tier"},
+    {"source":"azure","destination":"aws","usd_per_unit":"0.08","unit_bytes":1000000000,"assumed_tariff":"Azure North America standard internet outbound, first paid tier"},
+    {"source":"azure","destination":"gcp","usd_per_unit":"0.08","unit_bytes":1000000000,"assumed_tariff":"Azure North America standard internet outbound, first paid tier"},
+    {"source":"gcp","destination":"aws","usd_per_unit":"0.12","unit_bytes":1073741824,"assumed_tariff":"GCP Premium Tier North America destination, first paid tier"},
+    {"source":"gcp","destination":"azure","usd_per_unit":"0.12","unit_bytes":1073741824,"assumed_tariff":"GCP Premium Tier North America destination, first paid tier"}
+  ],
+  "limitations": ["Account free egress allowances not modeled", "Monthly aggregated tiers not modeled", "Actual cross-cloud internet SKU not independently identified from invoice", "Metered billable bytes may differ from recorded HTTP request body bytes", "Taxes, transfer API requests, compute, final result delivery, control-plane charges excluded"],
+  "verified_public_page_urls_2026_10_16": [
+    "https://aws.amazon.com/ec2/pricing/on-demand/",
+    "https://azure.microsoft.com/en-us/pricing/details/bandwidth/",
+    "https://cloud.google.com/vpc/network-pricing"
+  ]
+}

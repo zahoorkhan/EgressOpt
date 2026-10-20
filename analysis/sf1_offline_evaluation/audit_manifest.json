@@ -1,0 +1,97 @@
+{
+  "algorithm": "finite validated candidate enumeration, Pareto terminal filtering, price/SLO selector",
+  "calibration_quantile": 0.5,
+  "calibration_trials": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "dataset": "SF1/P1 six real-cloud query experiments",
+  "evaluated_query_delta_pairs": 24,
+  "evaluation_kind": "offline held-out replay, NOT prospective live optimizer evaluation",
+  "evaluation_trials": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "excluded_costs": [
+    "compute",
+    "control plane",
+    "result delivery",
+    "network overhead",
+    "monthly tier allocation"
+  ],
+  "latency_prediction_mae_ms": 11.691033009936598,
+  "latency_prediction_mape_pct": 1.4957338631570878,
+  "limitations": [
+    "single placement and SF1",
+    "plan-specific, not transferable to unmeasured plans",
+    "no independent cloud prospective optimizer run",
+    "small holdout per plan (5)",
+    "not billing reconciliation",
+    "memo search kernel separate from six cloud runners"
+  ],
+  "measured_billing_status": "NOT AVAILABLE; costs are HTTP payload x scenario rate",
+  "measured_samples_loaded": 200,
+  "model": "empirical per-plan stage+post-stage training quantiles; no network time isolation",
+  "optimizer_source_sha256": "9be9c9fc1528028267ed6fda21edc0375bf853b22c735414c640697c6cdccd51",
+  "plans": 20,
+  "pricing_classification": "PUBLISHED_LIST_RATE_MARGINAL_SCENARIO_NOT_BILLED",
+  "scenario_id": "PUBLIC_LIST_MARGINAL_2026_10_16_ACCOUNT_ABOVE_ALLOWANCES_NOT_INVOICED",
+  "selected_runs": {
+    "Q03": {
+      "plan_count": 3,
+      "run_id": "20261015T084807Z_3a72c9b1",
+      "run_json_sha256": "b14efe6fb961c5869b3b3336f2aca68015dfcdaddfb03985edb2038f2ce15d7f",
+      "trial_count": 30,
+      "trial_metrics_sha256": "95ab8aedff5f59c19eda54d5c612affb178d035e149a6d82c10d977db0f7b89c"
+    },
+    "Q05": {
+      "plan_count": 4,
+      "run_id": "20261015T203105Z_cfdf2d72",
+      "run_json_sha256": "8f7fd8ee5d4c9ba005112482840a76b5d2705d83c86c1ebc7a68f1c492854be1",
+      "trial_count": 40,
+      "trial_metrics_sha256": "59cf1c49d69d37c3798f501a1d34021ba89a2f4ec58aa6fdbd14c0f50fce23cc"
+    },
+    "Q06": {
+      "plan_count": 3,
+      "run_id": "20261016T123518Z_3cdc99fa",
+      "run_json_sha256": "c59db56dba96ab7d56e42bd4b0e6d2069f1efb4a2a84b2ec5c5e57678e6347eb",
+      "trial_count": 30,
+      "trial_metrics_sha256": "527adf287dd900796f7113cfb330c0c25a476c3e18b0d87473430010175a8712"
+    },
+    "Q09": {
+      "plan_count": 4,
+      "run_id": "20261016T075336Z_737221d6",
+      "run_json_sha256": "a167b0b8e256c45b651da22cf413762373bdbd9ba3c36d0344a37df1f7f6f09e",
+      "trial_count": 40,
+      "trial_metrics_sha256": "d413a989da28b097c82b3df2e5cd226b8a340e8996d9d985aa94dd6697df8cd5"
+    },
+    "Q12": {
+      "plan_count": 2,
+      "run_id": "20261015T052016Z_ee6c6e83",
+      "run_json_sha256": "bae5cd05bd41cb273f5842954e2677359dda887bffb6b5a0f2093dddfba5579f",
+      "trial_count": 20,
+      "trial_metrics_sha256": "3e78b2d870a5b72ce847ab92d8620125bb7efdd98ab5a78dc7f83a039950b4cf"
+    },
+    "Q14": {
+      "plan_count": 4,
+      "run_id": "20261015T111506Z_fb385312",
+      "run_json_sha256": "2f619b1ab9abdbd842e1e616a48b8153cb974a629b94e73848ee7094f4bea5de",
+      "trial_count": 40,
+      "trial_metrics_sha256": "f922d20d22d3db60e63fb499cf6205df2286ff6d738ad0f63c6c6ea387d51acc"
+    }
+  },
+  "source_zip_sha256": "9c0b1421b4d12fa91af9430b22edb5f3e2effc0e071a4075b0b1e7f2394df7dd",
+  "tariff_changes_plan_vs_bytes_only": 0,
+  "tariff_json_sha256": "37a82927f405e1f4eacfbb97bf468465b4b7b664d3edd40298d93d1d30ed9eff",
+  "test_trial_slo_violations": {
+    "bytes_only": 13,
+    "egressopt": 13,
+    "latency_only": 13
+  }
+}

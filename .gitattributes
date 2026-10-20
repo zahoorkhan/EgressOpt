@@ -1,0 +1,4 @@
+# Original archived evidence uses CRLF; preserve bytes exactly for provenance.
+*.csv whitespace=-blank-at-eol
+# Preserve the manuscript source verbatim in the publication copy.
+paper/*.tex whitespace=-blank-at-eol

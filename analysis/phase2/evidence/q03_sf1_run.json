@@ -1,0 +1,1855 @@
+{
+  "candidates": [
+    0,
+    4
+  ],
+  "cleanup": {
+    "vm_aws": "stopped_verified",
+    "vm_azure": "stopped_verified",
+    "worker_aws": "removed",
+    "worker_azure": "removed"
+  },
+  "cleanup_incomplete": false,
+  "cloud_execution_attempted": true,
+  "measurement_protocol": {
+    "independent_trial_paths": true,
+    "measured_pairs": 5,
+    "plan_order": "alternating AB/BA",
+    "source": "M6J extension of M6I, unchanged Phase 1 management",
+    "warmup_pairs": 1
+  },
+  "observations": [
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 0,
+      "controller_including_management_seconds": 72.24642145796679,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 18535958,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 33.94525479199365,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.4575782080064528,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.3727617499535,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.468975625000894,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 4,
+      "pair_order": [
+        0,
+        4
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 0,
+      "run_id": "q03rep1_r00_0",
+      "server_stage_plus_tls_seconds": 1.78072204099999,
+      "stage_count": 6,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.06852840099998048
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.010089147000030607
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 1,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.13547508599992852
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 18502006
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 1.3269497620000266
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 18502006,
+            "sha256": "3c828fc835f660a57fbab65316e2f6ed97db8483e53bd564cbb2eb8fe16d64d4",
+            "to": "aws"
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.1250380149999728
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 3,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.11464163000005101
+        }
+      ],
+      "warmup": true
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 4,
+      "controller_including_management_seconds": 76.06091979204211,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 2304676,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 2.162489167007152,
+          "provider": "aws",
+          "stages": [
+            "build_key_03",
+            "transfer_key_03"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 34.986524374980945,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.689046583021991,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.94803149998188,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.272464375011623,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 5,
+      "pair_order": [
+        0,
+        4
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 0,
+      "run_id": "q03rep1_r00_4",
+      "server_stage_plus_tls_seconds": 0.5999248939999688,
+      "stage_count": 8,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 1436839
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "build_key_03",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.057702505000065685
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "aws",
+            "payload_bytes": 1436839,
+            "sha256": "bfa5b85409aa879b7dc86daf156705898c2a46fae82cbb826ae8943279fefcc8",
+            "to": "azure"
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "transfer_key_03",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.042166081999994276
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.0214663090000613
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.01162236799996208
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 2,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.0667607149999867
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 833885
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.313194016999887
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 833885,
+            "sha256": "dd848a5399af579db94f17a3641e14e67aea3a4242727387fdf69ea437a3bb0c",
+            "to": "aws"
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.04338003899999876
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 4,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.04363285900001301
+        }
+      ],
+      "warmup": true
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 4,
+      "controller_including_management_seconds": 74.5874642910203,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 2305654,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 2.306667583005037,
+          "provider": "aws",
+          "stages": [
+            "build_key_03",
+            "transfer_key_03"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 32.848427542019635,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.361069749982562,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 34.397516958008055,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.671762124984525,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 5,
+      "pair_order": [
+        4,
+        0
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 1,
+      "run_id": "q03rep1_r01_4",
+      "server_stage_plus_tls_seconds": 0.5779683750005233,
+      "stage_count": 8,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 1438039
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "build_key_03",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.05438163999997414
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "aws",
+            "payload_bytes": 1438039,
+            "sha256": "612fff6cecd048e4ca342f5803861df1a99354bcb73e8053189df7b4b59e6d65",
+            "to": "azure"
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "transfer_key_03",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.03586233300006825
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.023540440000033414
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.013318292000008114
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 2,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.06645585400019627
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 833663
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.31487186700019265
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 833663,
+            "sha256": "84a607d9f761bc3c19e8cc7ca975851e4a99f608a5d5822c4770b4b5af1b1f51",
+            "to": "aws"
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.029819732000078147
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 4,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.039718216999972356
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 0,
+      "controller_including_management_seconds": 73.00569012499182,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 18535958,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 33.99421012500534,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.2784513749647886,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 34.42813016695436,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.3034254579688422,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 4,
+      "pair_order": [
+        4,
+        0
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 1,
+      "run_id": "q03rep1_r01_0",
+      "server_stage_plus_tls_seconds": 0.621540153000069,
+      "stage_count": 6,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.021555612999918594
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.0113849649999338
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 1,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.0664810360001411
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 18502006
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.35289787600004274
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 18502006,
+            "sha256": "3c828fc835f660a57fbab65316e2f6ed97db8483e53bd564cbb2eb8fe16d64d4",
+            "to": "aws"
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.09873571999992237
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 3,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.07048494300011043
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 0,
+      "controller_including_management_seconds": 73.27524950000225,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 18535958,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 33.50138066598447,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.3954316250164993,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 34.91414799995255,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.4627732500084676,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 4,
+      "pair_order": [
+        0,
+        4
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 2,
+      "run_id": "q03rep1_r02_0",
+      "server_stage_plus_tls_seconds": 0.5403254600000764,
+      "stage_count": 6,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.020079785999996602
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.008395619999873816
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 1,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.06633239600000707
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 18502006
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.32087955400015744
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 18502006,
+            "sha256": "3c828fc835f660a57fbab65316e2f6ed97db8483e53bd564cbb2eb8fe16d64d4",
+            "to": "aws"
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.053587377999974706
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 3,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.07105072600006679
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 4,
+      "controller_including_management_seconds": 75.0518151249853,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 2035980,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 2.4270054159569554,
+          "provider": "aws",
+          "stages": [
+            "build_key_03",
+            "transfer_key_03"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.461923208029475,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.8227663339930587,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.911570249998476,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.426348249951843,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 5,
+      "pair_order": [
+        0,
+        4
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 2,
+      "run_id": "q03rep1_r02_4",
+      "server_stage_plus_tls_seconds": 0.5683199280001645,
+      "stage_count": 8,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 1168216
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "build_key_03",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.04851945600012186
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "aws",
+            "payload_bytes": 1168216,
+            "sha256": "9ea03251ebfe9097dbe5e121ed564b32a923e3fcb02e36c2c075acc575f32a16",
+            "to": "azure"
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "transfer_key_03",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.033917209000037474
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.020528298000044742
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.008936129999938203
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 2,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.0747733870000502
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 833812
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.31628567900020244
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 833812,
+            "sha256": "3a890e31be019b6215954d2e0a34b66ac3a591aa0cf3c290443fd277982c6998",
+            "to": "aws"
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.026147878999836394
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 4,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.03921188999993319
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 4,
+      "controller_including_management_seconds": 73.97881416603923,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 2304474,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 2.3595546249998733,
+          "provider": "aws",
+          "stages": [
+            "build_key_03",
+            "transfer_key_03"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.2965976659907,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.6604114159708843,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.269287541974336,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.3905331669957377,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 5,
+      "pair_order": [
+        4,
+        0
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 3,
+      "run_id": "q03rep1_r03_4",
+      "server_stage_plus_tls_seconds": 0.5708438520002801,
+      "stage_count": 8,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 1437052
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "build_key_03",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.0555361910001011
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "aws",
+            "payload_bytes": 1437052,
+            "sha256": "bf22557dd85c6e4de7db1812c5afa1d21ab9bca994fbfc3dd4c31a23cd166d18",
+            "to": "azure"
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "transfer_key_03",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.02810182899997926
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.020376396000074237
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.008732127000030232
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 2,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.07276345400009632
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 833470
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.31745379199992385
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 833470,
+            "sha256": "924df9dd5e973eaa56bc07dc6bab559fe0e42459ac9b1911ba0cd95df9d492f2",
+            "to": "aws"
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.028581712999994124
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 4,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.03929835000008097
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 0,
+      "controller_including_management_seconds": 71.53774366702419,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 18535958,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 33.229085083003156,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.666533292038366,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.29369704105193,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.346942374948412,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 4,
+      "pair_order": [
+        4,
+        0
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 3,
+      "run_id": "q03rep1_r03_0",
+      "server_stage_plus_tls_seconds": 0.5719374129998869,
+      "stage_count": 6,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.021627413000032902
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.010483651999948052
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 1,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.07685326000000714
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 18502006
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.3422826650000843
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 18502006,
+            "sha256": "3c828fc835f660a57fbab65316e2f6ed97db8483e53bd564cbb2eb8fe16d64d4",
+            "to": "aws"
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.051321744999995644
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 3,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.06936867799981883
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 0,
+      "controller_including_management_seconds": 73.91586741700303,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 18535958,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 35.330366708978545,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.7492349579697475,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.31289741600631,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.5218939170008525,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 4,
+      "pair_order": [
+        0,
+        4
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 4,
+      "run_id": "q03rep1_r04_0",
+      "server_stage_plus_tls_seconds": 0.664302988000145,
+      "stage_count": 6,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.02023099200005163
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.011675469000010708
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 1,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.0763664119999703
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 18502006
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.34338892000005217
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 18502006,
+            "sha256": "3c828fc835f660a57fbab65316e2f6ed97db8483e53bd564cbb2eb8fe16d64d4",
+            "to": "aws"
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.13902465199998915
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 3,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.07361654300007103
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 4,
+      "controller_including_management_seconds": 75.25319129100535,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 2306477,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 2.3386734580271877,
+          "provider": "aws",
+          "stages": [
+            "build_key_03",
+            "transfer_key_03"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 34.33742587501183,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.494803333946038,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.796905750001315,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.283124083012808,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 5,
+      "pair_order": [
+        0,
+        4
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 4,
+      "run_id": "q03rep1_r04_4",
+      "server_stage_plus_tls_seconds": 0.5609658330001821,
+      "stage_count": 8,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 1438739
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "build_key_03",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.05374340699995628
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "aws",
+            "payload_bytes": 1438739,
+            "sha256": "c220c6432b52a19da3cc721b9d83c21acb55fb68949662dd9ff059e36d5a5c00",
+            "to": "azure"
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "transfer_key_03",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.030908247000070332
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.020014591000062865
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.012146476999987499
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 2,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.06615901300006044
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 833786
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.3156221309998273
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 833786,
+            "sha256": "dd46e879c9f54c6cb1f851d247d2463fc9a89401a2e6504019bffab468d6f8aa",
+            "to": "aws"
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.023850550000133808
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 4,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.0385214170000836
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 4,
+      "controller_including_management_seconds": 74.71292437502416,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 2306481,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 3.233735375048127,
+          "provider": "aws",
+          "stages": [
+            "build_key_03",
+            "transfer_key_03"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.80550262500765,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.4607107500196435,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 32.80759408295853,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.403202249959577,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 5,
+      "pair_order": [
+        4,
+        0
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 5,
+      "run_id": "q03rep1_r05_4",
+      "server_stage_plus_tls_seconds": 0.5785342110000329,
+      "stage_count": 8,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 1439066
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "build_key_03",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.05675793499995052
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "aws",
+            "payload_bytes": 1439066,
+            "sha256": "744865d527e4906fd7ccd05fc180347420e8875fce4edfc677ad273df26a567f",
+            "to": "azure"
+          },
+          "management_batch_index": 0,
+          "site": "aws",
+          "stage": "transfer_key_03",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.029006428000002416
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.020346896000091874
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 1,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.009024730999954045
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 2,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.07526278099999217
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 833463
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.31491965600002914
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 833463,
+            "sha256": "dc8fb1fcbc31b759232fed4100ca0c93e45e3404f15b019b2e2539b94c4be7ac",
+            "to": "aws"
+          },
+          "management_batch_index": 3,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.0320459629999732
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 4,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.04116982100003952
+        }
+      ],
+      "warmup": false
+    },
+    {
+      "billing_egress_usd": null,
+      "candidate_index": 0,
+      "controller_including_management_seconds": 72.52213745802874,
+      "correct_vs_independent_reference": true,
+      "execution_mode": "real_multicloud_management_plane_batched",
+      "http_request_body_bytes": 18535624,
+      "management_batches": [
+        {
+          "controller_management_batch_seconds": 33.718597209022846,
+          "provider": "azure",
+          "stages": [
+            "build_table_customer",
+            "transfer_table_customer"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.4616402499959804,
+          "provider": "aws",
+          "stages": [
+            "build_table_orders"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 33.81559645902598,
+          "provider": "azure",
+          "stages": [
+            "build_table_lineitem",
+            "transfer_table_lineitem"
+          ]
+        },
+        {
+          "controller_management_batch_seconds": 2.5248224170063622,
+          "provider": "aws",
+          "stages": [
+            "finish"
+          ]
+        }
+      ],
+      "management_rpc_calls": 4,
+      "pair_order": [
+        4,
+        0
+      ],
+      "query": "Q03",
+      "result_rows_sha256": "c5d400d3a3cbad6ae0d6bdd6e5d03a2e449c6da1f570f1ce50e7137d4b73689a",
+      "round_index": 5,
+      "run_id": "q03rep1_r05_0",
+      "server_stage_plus_tls_seconds": 0.6612906459997703,
+      "stage_count": 6,
+      "timing_caution": "Serial worker timing; management control batched by consecutive provider. Batch timings not attributable to individual stages; no concurrent DAG execution.",
+      "traces": [
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 33952
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "build_table_customer",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.02089740199994594
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 33952,
+            "sha256": "ab087e31114dcb9b28de198726cfa01ab9056cb810eeb4f2bfbff819af79cca3",
+            "to": "aws"
+          },
+          "management_batch_index": 0,
+          "site": "azure",
+          "stage": "transfer_table_customer",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.009753740999940419
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 3818771
+          },
+          "management_batch_index": 1,
+          "site": "aws",
+          "stage": "build_table_orders",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.0754370319998543
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "artifact_bytes": 18501672
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "build_table_lineitem",
+          "type": "duckdb_copy",
+          "worker_or_transfer_seconds": 0.33785818800015477
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "from": "azure",
+            "payload_bytes": 18501672,
+            "sha256": "22d03c5fcb760079b2e0df4cabcecfd21746cdd4035a65d5e5315c553c0d6d6b",
+            "to": "aws"
+          },
+          "management_batch_index": 2,
+          "site": "azure",
+          "stage": "transfer_table_lineitem",
+          "type": "transfer_file",
+          "worker_or_transfer_seconds": 0.14636561799989067
+        },
+        {
+          "controller_with_management_seconds": null,
+          "evidence": {
+            "row_count": 10
+          },
+          "management_batch_index": 3,
+          "site": "aws",
+          "stage": "finish",
+          "type": "duckdb_query",
+          "worker_or_transfer_seconds": 0.07097866499998418
+        }
+      ],
+      "warmup": false
+    }
+  ],
+  "phase1_cloud_runner_sha256": "bc7ac734062e88e13e4a23b3b6368c7a5623c6a806adfef63c9d913462526d21",
+  "query": "Q03",
+  "repeated_sf1_summary": {
+    "candidate_0_baseline": 0,
+    "candidate_1_semijoin": 4,
+    "caution": "Paired percentile bootstrap is descriptive for this limited warm-cache VM run. No parallel-DAG latency, monetary bill, randomized cross-day design, or global optimality established.",
+    "cross_cloud_http_request_body_bytes": {
+      "baseline": {
+        "max": 18535958.0,
+        "mean": 18535891.2,
+        "median": 18535958.0,
+        "min": 18535624.0,
+        "n": 5,
+        "sample_stdev": 149.36934089698596
+      },
+      "paired_mean_reduction_bootstrap_95pct": [
+        87.55753209777167,
+        88.43444017158292
+      ],
+      "paired_percent_reduction": {
+        "max": 89.0160519353788,
+        "mean": 87.85160436671111,
+        "median": 87.56118243254544,
+        "min": 87.55649661430336,
+        "n": 5,
+        "sample_stdev": 0.6509613981891059
+      },
+      "semijoin": {
+        "max": 2306481.0,
+        "mean": 2251813.2,
+        "median": 2305654.0,
+        "min": 2035980.0,
+        "n": 5,
+        "sample_stdev": 120657.22233956822
+      }
+    },
+    "management_inclusive_controller_seconds": {
+      "baseline": {
+        "max": 73.91586741700303,
+        "mean": 72.85133763341,
+        "median": 73.00569012499182,
+        "min": 71.53774366702419,
+        "n": 5,
+        "sample_stdev": 0.8903161638496911
+      },
+      "paired_mean_reduction_bootstrap_95pct": [
+        -3.0848695357981137,
+        -2.0752605468275576
+      ],
+      "paired_percent_reduction": {
+        "max": -1.8092514107393098,
+        "mean": -2.566708452934048,
+        "median": -2.4245098271320042,
+        "min": -3.412283326095822,
+        "n": 5,
+        "sample_stdev": 0.647158438322915
+      },
+      "semijoin": {
+        "max": 75.25319129100535,
+        "mean": 74.71684184961487,
+        "median": 74.71292437502416,
+        "min": 73.97881416603923,
+        "n": 5,
+        "sample_stdev": 0.4902337655372589
+      }
+    },
+    "n_measured_pairs": 5,
+    "n_warmup_pairs": 1,
+    "plan_order": "alternated by round index; starting plan reverses every round",
+    "serial_worker_stage_plus_tls_seconds": {
+      "baseline": {
+        "max": 0.664302988000145,
+        "mean": 0.6118793319999896,
+        "median": 0.621540153000069,
+        "min": 0.5403254600000764,
+        "n": 5,
+        "sample_stdev": 0.05476851881691217
+      },
+      "paired_mean_reduction_bootstrap_95pct": [
+        -0.5938757306060239,
+        12.482821669025874
+      ],
+      "paired_percent_reduction": {
+        "max": 15.555726357795685,
+        "mean": 6.018112902388208,
+        "median": 7.010291738873519,
+        "min": -5.18103810989845,
+        "n": 5,
+        "sample_stdev": 8.566298205980445
+      },
+      "semijoin": {
+        "max": 0.5785342110000329,
+        "mean": 0.5713264398002366,
+        "median": 0.5708438520002801,
+        "min": 0.5609658330001821,
+        "n": 5,
+        "sample_stdev": 0.007291800983423023
+      }
+    },
+    "unit": "SF1 same-cloud-pair sequential runs; serial worker stage+TLS not DAG critical path"
+  },
+  "run_id": "q03rep1",
+  "sf": 1,
+  "source_guard": "PASS",
+  "status": "CLOUD_RUN_COMPLETED_REFERENCE_VERIFIED",
+  "transfer_metric": "cross-cloud TLS HTTP request-body bytes, not billed egress",
+  "workers_started": [
+    "aws",
+    "azure"
+  ]
+}
